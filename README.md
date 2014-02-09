@@ -1,6 +1,6 @@
-# Sample module project
+# DATX02 Prototype
 
-A sample Javascript module with folder structure, tests, and more.
+Quick and dirty file transfer with WebRTC and IndexedDB
 
 ## Develop
 
