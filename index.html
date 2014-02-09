@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Prototype</title>
+		<meta charset="utf-8" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script src="node_modules/peerjs/dist/peer.js"></script>
+		<script src="build/bundle.js"></script>
+
+		<style>
+			body {
+				font-family: sans-serif;
+			}
+
+			label[for] {
+				font-weight: bold;
+				display: block;
+				cursor: pointer;
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<h1>DATX02 Prototype</h1>
+		
+		<label for="peer-name">Peer name</label>
+		<input type="text" id="peer-name" placeholder="Ex. 'johan'" />
+
+		<h2>Connect</h2>
+
+		<label for="other-peer">Other peer</label>
+		<input type="text" id="other-peer" />
+		
+		<p>
+			<input type="file" id="file" />
+		</p>
+
+		<p>
+			<input type="button" id="submit" value="Send file" />
+		</p>
+		
+		<script>
+			$(function() {
+				var app = new App({ host: 'datx02.dev', port: 9000 });
+				app.init();
+			})
+		</script>
+	</body>
+</html>
