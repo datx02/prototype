@@ -22,23 +22,29 @@
 	</head>
 
 	<body>
-		<h1>DATX02 Prototype</h1>
-		
-		<label for="peer-name">Peer name</label>
-		<input type="text" id="peer-name" placeholder="Ex. 'johan'" />
+		<section style="float: left; width: 50%;">
+			<h1>DATX02 Prototype</h1>
+			
+			<label for="peer-name">Peer name</label>
+			<input type="text" id="peer-name" placeholder="Ex. 'johan'" autofocus />
 
-		<h2>Connect</h2>
+			<h2>Connect</h2>
 
-		<label for="other-peer">Other peer</label>
-		<input type="text" id="other-peer" />
-		
-		<p>
-			<input type="file" id="file" />
-		</p>
+			<label for="other-peer">Other peer</label>
+			<input type="text" id="other-peer" />
+			
+			<p>
+				<input type="file" id="file" />
+			</p>
 
-		<p>
-			<input type="button" id="submit" value="Send file" />
-		</p>
+			<p>
+				<input type="button" id="submit" value="Send file" />
+			</p>
+		</section>
+
+		<section style="float: left; width: 50%;">
+			<div id="file-container"></div>
+		</section>
 		
 		<script>
 			$(function() {
