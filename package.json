@@ -6,7 +6,7 @@
   "main": "lib/main.js",
   "dependencies": {
     "q": "1.0.x",
-    "indexeddbstore": "git://github.com/datx02/data-storage.git#master",
+    "indexeddbstore": "git://github.com/rymdjs/data-storage.git#master",
     "peerjs" : "git://github.com/peers/peerjs.git#0.3.7"
   },
   "scripts": {
