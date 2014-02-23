@@ -3,8 +3,10 @@
 	<head>
 		<title>Prototype</title>
 		<meta charset="utf-8" />
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script src="node_modules/jquery/dist/jquery.min.js"></script>
 		<script src="node_modules/peerjs/dist/peer.js"></script>
+		<script src="node_modules/underscore/underscore.js"></script>
+		<script src="node_modules/backbone/backbone.js"></script>
 		<script src="build/bundle.js"></script>
 
 		<style>
@@ -18,40 +20,36 @@
 				cursor: pointer;
 			}
 
+			#dropzone {
+				width: 300px;
+				height: 300px;
+				border: 2px dashed;
+				border-radius: 3px;
+			}
+
 		</style>
 	</head>
 
 	<body>
-		<section style="float: left; width: 50%;">
-			<h1>DATX02 Prototype</h1>
-			
-			<label for="peer-name">Peer name</label>
-			<input type="text" id="peer-name" placeholder="Ex. 'johan'" autofocus />
-
-			<h2>Connect</h2>
-
-			<label for="other-peer">Other peer</label>
-			<input type="text" id="other-peer" />
-			
+		<h1>DATX02 Prototype</h1>
+		
+		<section id="upload">
+			<h2>Add file</h2>
 			<p>
-				<input type="file" id="file" />
-			</p>
-
-			<p>
-				<input type="button" id="submit" value="Send file" />
+				<input type="file" class="file-input" />
 			</p>
 		</section>
 
-		<section style="float: left; width: 50%;">
-			<div>
-				<ul id="file-container"></ul>
-			</div>
+		<section id="file-list">
+			<h2>Your files</h2>
+
+			<ul></ul>
 		</section>
+	
 		
 		<script>
 			$(function() {
-				var app = new App({ host: 'datx02.dev', port: 9000 });
-				app.init();
+				App.start();
 			})
 		</script>
 	</body>
