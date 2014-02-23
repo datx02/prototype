@@ -10,8 +10,48 @@
 		<script src="build/bundle.js"></script>
 
 		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			html, body {
+				height: 100%;
+				margin: 0;
+			}
+
 			body {
 				font-family: sans-serif;
+			}
+
+			.dropzone {
+				padding: .5em;
+				margin: .5em;
+				border: 2px solid transparent;
+				transition: background-color .1s;
+			}
+
+			.dropzone.drag-hover {
+				position: relative;
+				border: 2px dashed;
+				background-color: rgba(0, 129, 214, .4);
+			}
+
+			.dropzone.drag-hover::after {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				pointer-events: none;
+				content: "Release to add file";
+				position: absolute;
+				top: 0;
+				right: 0;
+				left: 0;
+				bottom: 0;
+				text-align: center;
+				font-size: 48px;
+				font-weight: bold;
+				color: #EBF7FF;
+
 			}
 
 			label[for] {
@@ -20,33 +60,28 @@
 				cursor: pointer;
 			}
 
-			#dropzone {
-				width: 300px;
-				height: 300px;
-				border: 2px dashed;
-				border-radius: 3px;
-			}
-
 		</style>
 	</head>
 
 	<body>
-		<h1>DATX02 Prototype</h1>
-		
-		<section id="upload">
-			<h2>Add file</h2>
-			<p>
-				<input type="file" class="file-input" />
-			</p>
-		</section>
+		<div class="dropzone">
+			<h1>DATX02 Prototype</h1>
+			
+			<section id="upload">
+				<h2>Add file</h2>
+				<p>
+					<input type="file" class="file-input" />
+				</p>
+			</section>
 
-		<section id="file-list">
-			<h2>Your files</h2>
+			<section id="file-list">
+				<h2>Your files</h2>
 
-			<ul></ul>
-		</section>
-	
+				<ul></ul>
+			</section>
 		
+		</div>
+
 		<script>
 			$(function() {
 				App.start();
