@@ -9,8 +9,8 @@ var spawn = 		require('child_process').spawn;
 // Common build operation:
 // 	Take main.js, add deps, concatenate into
 // 	`bundle.js` and put in build directory.
-function build() {
-	gulp.src('./lib/main.js')
+function build(files) {
+	gulp.src('./lib/app.js')
 		.pipe(browserify())
 		.pipe(concat("bundle.js"))
 		.pipe(gulp.dest("./build"));
@@ -32,7 +32,7 @@ gulp.task('test', function () {
 // Watch source files and use Browserify to handle deps.
 gulp.task('watch', function() {
 	gulp.src("lib/**/*.js").pipe(watch(function(files) {
-		return build();
+		return build(files);
 	}));
 });
 

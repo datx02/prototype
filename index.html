@@ -3,13 +3,55 @@
 	<head>
 		<title>Prototype</title>
 		<meta charset="utf-8" />
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script src="node_modules/jquery/dist/jquery.min.js"></script>
 		<script src="node_modules/peerjs/dist/peer.js"></script>
+		<script src="node_modules/underscore/underscore.js"></script>
+		<script src="node_modules/backbone/backbone.js"></script>
 		<script src="build/bundle.js"></script>
 
 		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			html, body {
+				height: 100%;
+				margin: 0;
+			}
+
 			body {
 				font-family: sans-serif;
+			}
+
+			.dropzone {
+				padding: .5em;
+				margin: .5em;
+				border: 2px solid transparent;
+				transition: background-color .1s;
+			}
+
+			.dropzone.drag-hover {
+				position: relative;
+				border: 2px dashed;
+				background-color: rgba(0, 129, 214, .4);
+			}
+
+			.dropzone.drag-hover::after {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				pointer-events: none;
+				content: "Release to add file";
+				position: absolute;
+				top: 0;
+				right: 0;
+				left: 0;
+				bottom: 0;
+				text-align: center;
+				font-size: 48px;
+				font-weight: bold;
+				color: #EBF7FF;
+
 			}
 
 			label[for] {
@@ -22,36 +64,27 @@
 	</head>
 
 	<body>
-		<section style="float: left; width: 50%;">
+		<div class="dropzone">
 			<h1>DATX02 Prototype</h1>
 			
-			<label for="peer-name">Peer name</label>
-			<input type="text" id="peer-name" placeholder="Ex. 'johan'" autofocus />
+			<section id="upload">
+				<h2>Add file</h2>
+				<p>
+					<input type="file" class="file-input" multiple />
+				</p>
+			</section>
 
-			<h2>Connect</h2>
+			<section id="file-list">
+				<h2>Your files</h2>
 
-			<label for="other-peer">Other peer</label>
-			<input type="text" id="other-peer" />
-			
-			<p>
-				<input type="file" id="file" />
-			</p>
-
-			<p>
-				<input type="button" id="submit" value="Send file" />
-			</p>
-		</section>
-
-		<section style="float: left; width: 50%;">
-			<div>
-				<ul id="file-container"></ul>
-			</div>
-		</section>
+				<ul></ul>
+			</section>
 		
+		</div>
+
 		<script>
 			$(function() {
-				var app = new App({ host: 'datx02.dev', port: 9000 });
-				app.init();
+				App.start();
 			})
 		</script>
 	</body>
