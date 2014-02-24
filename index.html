@@ -23,9 +23,17 @@
 				font-family: sans-serif;
 			}
 
-			.dropzone {
+			.col {
+				width: 50%;
+				float: left;
+			}
+
+			.content {
 				padding: .5em;
 				margin: .5em;
+			}
+
+			.dropzone {
 				border: 2px solid transparent;
 				transition: background-color .1s;
 			}
@@ -63,10 +71,11 @@
 		</style>
 	</head>
 
-	<body>
-		<div class="dropzone">
-			<h1>DATX02 Prototype</h1>
-			
+	<body class="content">
+		<header><h1>DATX02 Prototype</h1></header>
+
+		<div class="dropzone col">
+
 			<section id="upload">
 				<h2>Add file</h2>
 				<p>
@@ -79,8 +88,24 @@
 
 				<ul></ul>
 			</section>
-		
+
 		</div>
+
+		<section id="connection" class="col">
+			<label for="name">Name</label>
+			<input id="name" class="name" type="text" placeholder="Anders" />
+			<button class="connect">Connect</button>
+
+			<label for="">File to send</label>
+			<select name="" class="files"></select>
+
+			<label for="to-peer"></label>
+			<input id="to-peer" class="to-peer" type="text" placeholder="Lars">
+
+			<button class="send">Send file</button>
+
+		</section>
+
 
 		<script>
 			$(function() {
