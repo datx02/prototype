@@ -6,8 +6,10 @@
   "main": "lib/app.js",
   "dependencies": {
     "q": "1.0.x",
+    "rymd": "0.0.x",
+    "dht-client": "0.0.x",
+    "peerjs-connection": "0.0.x",
     "indexeddbstore": "git://github.com/rymdjs/data-storage.git#master",
-    "peerjs": "git://github.com/peers/peerjs.git#0.3.7",
     "underscore": "~1.6.0",
     "backbone": "~1.1.2",
     "jquery": "~2.1.0"
