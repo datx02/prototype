@@ -240,11 +240,7 @@ p {
     }
 
     &:hover {
-      background-color: $accent;
-
-      &, .file-type {
-        color: #fff;
-      }
+      background-color: rgba($accent, .1);
     }
   }
 
