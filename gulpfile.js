@@ -7,6 +7,7 @@ var concat = 		require("gulp-concat");
 var spawn = 		require('child_process').spawn;
 var jshint = 		require('gulp-jshint');
 var jshintStylish = require('jshint-stylish');
+var notify = 		require("gulp-notify");
 
 // Common build operation:
 // 	Take main.js, add deps, concatenate into
@@ -14,6 +15,7 @@ var jshintStylish = require('jshint-stylish');
 function build(files) {
 	gulp.src('./lib/app.js')
 		.pipe(browserify())
+		.on('error', notify.onError("<%= error.message%>"))
 		.pipe(concat("bundle.js"))
 		.pipe(gulp.dest("./build"));
 }
