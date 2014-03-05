@@ -187,6 +187,11 @@ input[type="submit"] {
     color: #fff;
   }
 
+  &.small {
+    padding: .1em .6em;
+    font-size: .9em;
+  }
+
   &.block {
     display: block;
     width: 100%;
@@ -225,32 +230,84 @@ p {
     border-bottom: 1px solid $border;
   }
 
-  a {
+  li:hover {
+    background-color: rgba($accent, .08);
+  }
+
+  li.expanded,
+  li.expanded:hover  {
+    background-color: rgba(#F2FF00, .1);
+  }
+
+  .resource {
+    font-weight: 500;
     border: 0;
-    display: block;
+    display: table;
     padding: .6em .5em .3em;
     position: relative;
+    width: 100%;
 
-    & > span {
+    & > * {
+      display: table-cell;
+    }
+
+
+    /*& > span {
       display: inline-block;
       max-width: 90%;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-    }
+    }*/
 
     &:hover {
-      background-color: rgba($accent, .1);
+
+      .file-link {
+        visibility: visible;
+      }
+    }
+  }
+
+  .file-name {
+    width: 80%;
+    cursor: pointer;
+  }
+
+  .file-type,
+  .file-link {
+    text-align: right;
+  }
+
+  .file-link {
+    visibility: hidden;
+    border: 0;
+    font-weight: 300;
+    font-size: .95em;
+    color: darken($accent, 10%);
+
+    &:hover {
+      color: darken($accent, 20%);
     }
   }
 
   .file-type {
-    position: absolute;
-    right: .5em;
-    line-height: 2;
     text-transform: uppercase;
     color: $gray;
-    top: .8em;
+  }
+
+  .sharing-panel {
+    padding: .5em;
+
+    label {
+      font-weight: bold;
+      font-size: .85em;
+      margin-right: 5px;
+    }
+
+    input {
+      padding: 3px;
+      font-size: .9em;
+    }
   }
 }
 

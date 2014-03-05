@@ -53,6 +53,19 @@
 			</section>
 		</script>
 
+		<script type="text/html" id="file-template">
+			<span class="resource" data-guid="<%= guid %>">
+				<span class="file-name"><%= name%></span>
+				<a class="file-link" href="<%= url %>">View</a>
+				<small class="file-type"><%= type %></small>
+			</span>
+
+			<div class="sharing-panel" hidden>
+				<label>Share with</label><input type="text" class="remote-identity" />
+				<button class="share-file small">Share</button>
+			</div>
+		</script>
+
 		<script src="node_modules/jquery/dist/jquery.min.js"></script>
 		<script src="node_modules/peerjs/dist/peer.js"></script>
 		<script src="node_modules/underscore/underscore.js"></script>
