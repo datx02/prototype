@@ -3,17 +3,23 @@
 	<head>
 		<title>Prototype</title>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="css/normalize.css" />
-		<link rel="stylesheet" href="css/shuttle.css" />
+		<link rel="stylesheet" href="build/shuttle.css" />
 	</head>
 
-	<body class="content">
-		<header>
+	<body>
+		<header role="banner">
 			<h1>Shuttle</h1>
+			<p class="subhead">A secure, server-less file<br /> sharing app built with <a href="http://github.com/rymdjs">Rymd</a></p>
 		</header>
 
 		<div id="app">
 		</div>
+
+		<footer role="contentinfo">
+			<p>
+				<small>Built by Robert, Johan, Robin, Niklas and Johannes</small>
+			</p>
+		</footer>
 
 		<script type="text/html" id="home-template">
 			<header class="current-identity">
@@ -37,10 +43,12 @@
 		<script id="login-template" type="text/html">
 			<section class="connection-view">
 				<form>
-					<label for="identity">Choose a nickname</label>
-					<input id="identity" type="text" autofocus />
+					<p>
+						<label for="identity">Choose a nickname</label>
+						<input id="identity" class="block" type="text" autofocus required />
+					</p>
 
-					<input type="submit" class="connect" value="Connect" />
+					<input type="submit" class="connect block" value="Get started" />
 				</form>
 			</section>
 		</script>

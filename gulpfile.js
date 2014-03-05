@@ -8,6 +8,7 @@ var spawn = 		require('child_process').spawn;
 var jshint = 		require('gulp-jshint');
 var jshintStylish = require('jshint-stylish');
 var notify = 		require("gulp-notify");
+var sass = 			require('gulp-sass');
 
 // Common build operation:
 // 	Take main.js, add deps, concatenate into
@@ -18,6 +19,13 @@ function build(files) {
 		.on('error', notify.onError("<%= error.message%>"))
 		.pipe(concat("bundle.js"))
 		.pipe(gulp.dest("./build"));
+}
+
+function buildSass(files) {
+	gulp.src("stylesheets/shuttle.scss")
+			.pipe(sass())
+			.on('error', notify.onError("<%= error.message%>"))
+			.pipe(gulp.dest("./build"));
 }
 
 
@@ -38,9 +46,16 @@ gulp.task('watch', function() {
 	gulp.src("lib/**/*.js").pipe(watch(function(files) {
 		return build(files);
 	}));
+	gulp.src("stylesheets/shuttle.scss").pipe(watch(function(files) {
+		return buildSass(files);
+	}));
 });
 
-gulp.task('build', ['clean', 'lint'], function() {
+gulp.task("sass", function(){
+	buildSass();
+});
+
+gulp.task('build', ['clean', 'lint', 'sass'], function() {
     build();
 });
 
