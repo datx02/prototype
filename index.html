@@ -3,12 +3,6 @@
 	<head>
 		<title>Prototype</title>
 		<meta charset="utf-8" />
-		<script src="node_modules/jquery/dist/jquery.min.js"></script>
-		<script src="node_modules/peerjs/dist/peer.js"></script>
-		<script src="node_modules/underscore/underscore.js"></script>
-		<script src="node_modules/backbone/backbone.js"></script>
-		<script src="build/bundle.js"></script>
-
 		<link rel="stylesheet" href="css/normalize.css" />
 		<link rel="stylesheet" href="css/shuttle.css" />
 	</head>
@@ -18,7 +12,13 @@
 			<h1>Shuttle</h1>
 		</header>
 
-		<div class="dropzone col">
+		<div id="app">
+		</div>
+
+		<script type="text/html" id="home-template">
+			<header class="current-identity">
+
+			</header>
 
 			<section id="upload">
 				<h2>Add file</h2>
@@ -27,29 +27,29 @@
 				</p>
 			</section>
 
-			<section id="file-list">
+			<section id="my-files">
 				<h2>Your files</h2>
 
-				<ul></ul>
+				<ul class="file-list"></ul>
 			</section>
+		</script>
 
-		</div>
+		<script id="login-template" type="text/html">
+			<section class="connection-view">
+				<form>
+					<label for="identity">Choose a nickname</label>
+					<input id="identity" type="text" autofocus />
 
-		<section id="connection" class="col">
-			<label for="name">Name</label>
-			<input id="name" class="name" type="text" placeholder="Anders" />
-			<button class="connect">Connect</button>
+					<input type="submit" class="connect" value="Connect" />
+				</form>
+			</section>
+		</script>
 
-			<label for="">File to send</label>
-			<select name="" class="files"></select>
-
-			<label for="to-peer"></label>
-			<input id="to-peer" class="to-peer" type="text" placeholder="Lars">
-
-			<button class="send">Send file</button>
-
-		</section>
-
+		<script src="node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="node_modules/peerjs/dist/peer.js"></script>
+		<script src="node_modules/underscore/underscore.js"></script>
+		<script src="node_modules/backbone/backbone.js"></script>
+		<script src="build/bundle.js"></script>
 
 		<script>
 			$(function() {
