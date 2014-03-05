@@ -1,10 +1,19 @@
-# DATX02 Prototype
+# Rymd: Shuttle
 
-Quick and dirty file transfer with WebRTC and IndexedDB
+Shuttle is a proof-of-concept prototype for peer-to-peer file transfers using the [Rymd](http://github.com/rymdjs/rymd) library, for WebRTC transfers, WebCrypto encryption and IndexedDB file storage.
+
+## Get started
+
+	npm install
+	open index.html
 
 ## Develop
 
-	npm install 
+	npm install
 	gulp watch
 
-A concatenated `bundle.js` will be generated in the `build` directory.
+A concatenated `bundle.js` will be generated in the `build` directory. See `gulpfile.js` for all tasks.
+
+## Browser requirements
+
+Due to the use of cutting edge HTML5 technologies, **Chrome 33** is a hard requirement in order to run Shuttle.
