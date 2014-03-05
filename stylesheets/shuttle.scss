@@ -1,0 +1,284 @@
+@import "normalize";
+
+* {
+  box-sizing: border-box;
+}
+
+// Colors
+
+$accent:     #EA6767;   // red
+$font:       "Helvetica Neue", Helvetica, sans-serif;
+$gray:       #888;
+$border:     #ddd;
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font: 1em/1.5 $font;
+  color: #555;
+  max-width: 30em;
+  width: 95%;
+  margin: 2em auto;
+
+  &.authed {
+    [role="banner"] {
+      font-size: .5em;
+
+      .subhead {
+        height: 0;
+        overflow: hidden;
+        margin: 0;
+      }
+    }
+  }
+}
+
+/* =HEADINGS
+--------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+  color: $accent;
+  font-weight: 500;
+}
+
+.subhead {
+  color: $gray;
+  font-size: 1.1em;
+}
+
+[role="banner"] {
+  text-align: center;
+  transition: font-size .5s ease-out;
+
+  h1 {
+    margin: 0;
+  }
+
+  .subhead {
+    transition: height .5s ease-out;
+  }
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 3.6em;
+}
+
+h2 {
+  font-weight: 500;
+
+}
+
+/* =LINKS
+--------------------------------------------- */
+
+a {
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 1px solid $border;
+  transition: border-bottom-color .15s ease-out;
+
+  &:hover {
+    border-bottom-color: #333;
+  }
+}
+
+
+/* =DROPZONE
+--------------------------------------------- */
+
+.dropzone {
+  border: 2px solid transparent;
+  transition: background-color .1s;
+}
+
+.dropzone.drag-hover {
+  position: relative;
+
+  &::after {
+    border: 2px dashed;
+    border-radius: 6px;
+    background-color: rgba(lighten($accent, 20%), .8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: "Release to add file";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 300;
+    color: darken($accent, 30%);
+  }
+}
+
+
+/* =FORMS
+--------------------------------------------- */
+
+label[for] {
+  display: block;
+  cursor: pointer;
+}
+
+label {
+  font-weight: 500;
+  font-size: 1.1em;
+  color: $gray;
+  margin: .5em 0;
+}
+
+input[type="text"] {
+  -webkit-appearance: none;
+  border: 1px solid $border;
+  padding: .5em;
+  border-radius: 2px;
+  box-shadow: inset rgba(#000, .05) 0 1px 2px, rgba(#000, .03) 0 1px 10px;
+  background-color: #fcfcfc;
+  transition: border-color .2s ease-out;
+
+  &.block {
+    display: block;
+    width: 100%;
+  }
+
+  &:hover {
+    border-color: #bbb;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #aaa;
+    background-color: #fff;
+  }
+}
+
+
+.btn,
+button,
+input[type="submit"] {
+  -webkit-appearance: none;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+
+  background-color: #fff;
+  border-radius: 3px;
+  text-align: center;
+  color: $accent;
+  font-size: 1.1em;
+  border: 2px solid $accent;
+  font-weight: 500;
+  padding: .4em 1em;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background-color: $accent;
+    color: #fff;
+  }
+
+  &.block {
+    display: block;
+    width: 100%;
+  }
+}
+
+
+/* =ELEMENTS
+--------------------------------------------- */
+
+p {
+  margin: 0 0 1.5em;
+}
+
+
+/* =HELPERS
+--------------------------------------------- */
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* =LISTINGS
+--------------------------------------------- */
+
+.file-list {
+  @extend .list;
+  border-radius: 4px;
+  border: 1px solid $border;
+  box-shadow: rgba(#000, .05) 0 2px 2px;
+
+  li:not(:last-child) {
+    border-bottom: 1px solid $border;
+  }
+
+  a {
+    border: 0;
+    display: block;
+    padding: .6em .5em .3em;
+    position: relative;
+
+    & > span {
+      display: inline-block;
+      max-width: 90%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &:hover {
+      background-color: rgba($accent, .1);
+    }
+  }
+
+  .file-type {
+    position: absolute;
+    right: .5em;
+    line-height: 2;
+    text-transform: uppercase;
+    color: $gray;
+    top: .8em;
+  }
+}
+
+
+/* =VIEWS
+--------------------------------------------- */
+
+.current-identity {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  font-size: .9em;
+  color: $gray;
+}
+
+.connection-view {
+  text-align: center;
+
+  form {
+    margin: 0 20%;
+  }
+}
+
+/* =FOOTER
+--------------------------------------------- */
+
+footer {
+  margin-top: 1em;
+  text-align: center;
+  color: $gray;
+}

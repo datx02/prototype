@@ -3,21 +3,28 @@
 	<head>
 		<title>Prototype</title>
 		<meta charset="utf-8" />
-		<script src="node_modules/jquery/dist/jquery.min.js"></script>
-		<script src="node_modules/peerjs/dist/peer.js"></script>
-		<script src="node_modules/underscore/underscore.js"></script>
-		<script src="node_modules/backbone/backbone.js"></script>
-		<script src="build/bundle.js"></script>
-
-		<link rel="stylesheet" href="style.css">
-		<style>
-		</style>
+		<link rel="stylesheet" href="build/shuttle.css" />
 	</head>
 
-	<body class="content">
-		<header><h1>DATX02 Prototype</h1></header>
+	<body>
+		<header role="banner">
+			<h1>Shuttle</h1>
+			<p class="subhead">A secure, server-less file<br /> sharing app built with <a href="http://github.com/rymdjs">Rymd</a></p>
+		</header>
 
-		<div class="dropzone col">
+		<div id="app">
+		</div>
+
+		<footer role="contentinfo">
+			<p>
+				<small>Built by Robert, Johan, Robin, Niklas and Johannes</small>
+			</p>
+		</footer>
+
+		<script type="text/html" id="home-template">
+			<header class="current-identity">
+
+			</header>
 
 			<section id="upload">
 				<h2>Add file</h2>
@@ -26,29 +33,31 @@
 				</p>
 			</section>
 
-			<section id="file-list">
+			<section id="my-files">
 				<h2>Your files</h2>
 
-				<ul></ul>
+				<ul class="file-list"></ul>
 			</section>
+		</script>
 
-		</div>
+		<script id="login-template" type="text/html">
+			<section class="connection-view">
+				<form>
+					<p>
+						<label for="identity">Choose a nickname</label>
+						<input id="identity" class="block" type="text" autofocus required />
+					</p>
 
-		<section id="connection" class="col">
-			<label for="name">Name</label>
-			<input id="name" class="name" type="text" placeholder="Anders" />
-			<button class="connect">Connect</button>
+					<input type="submit" class="connect block" value="Get started" />
+				</form>
+			</section>
+		</script>
 
-			<label for="">File to send</label>
-			<select name="" class="files"></select>
-
-			<label for="to-peer"></label>
-			<input id="to-peer" class="to-peer" type="text" placeholder="Lars">
-
-			<button class="send">Send file</button>
-
-		</section>
-
+		<script src="node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="node_modules/peerjs/dist/peer.js"></script>
+		<script src="node_modules/underscore/underscore.js"></script>
+		<script src="node_modules/backbone/backbone.js"></script>
+		<script src="build/bundle.js"></script>
 
 		<script>
 			$(function() {
