@@ -16,4 +16,4 @@ A concatenated `bundle.js` will be generated in the `build` directory. See `gulp
 
 ## Browser requirements
 
-Due to the use of cutting edge HTML5 technologies, **Chrome 33** is a hard requirement in order to run Shuttle.
+Due to the use of cutting edge HTML5 technologies, **Chrome Canary 34+** is a hard requirement in order to run Shuttle.
