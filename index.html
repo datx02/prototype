@@ -45,7 +45,7 @@
 				<form>
 					<p>
 						<label for="identity">Choose a nickname</label>
-						<input id="identity" class="block" type="text" autofocus required />
+						<input id="identity" class="block" type="text" value="legogris" autofocus required />
 					</p>
 
 					<input type="submit" class="connect block" value="Get started" />
@@ -54,7 +54,7 @@
 		</script>
 
 		<script type="text/html" id="file-template">
-			<span class="resource" data-guid="<%= guid %>">
+			<span class="resource" data-guid="<%= id %>">
 				<span class="file-name"><%= name%></span>
 				<a class="file-link" href="<%= url %>" target="_blank">View</a>
 				<small class="file-type"><%= type %></small>
