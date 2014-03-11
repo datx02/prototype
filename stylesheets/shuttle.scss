@@ -6,7 +6,7 @@
 
 // Colors
 
-$accent:     #EA6767;   // red
+$accent:     #67B2EB;   // blue
 $font:       "Helvetica Neue", Helvetica, sans-serif;
 $gray:       #888;
 $border:     #ddd;
@@ -36,6 +36,11 @@ body {
       }
     }
   }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* =HEADINGS
@@ -314,6 +319,14 @@ p {
 
 /* =VIEWS
 --------------------------------------------- */
+
+[role="banner"] {
+  .logo {
+    max-width: 1.1em;
+    position: relative;
+    top: .15em;
+  }
+}
 
 .current-identity {
   position: fixed;
