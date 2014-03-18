@@ -55,9 +55,11 @@
 		</script>
 
 		<script type="text/html" id="file-template">
-			<span class="resource" data-guid="<%= id %>">
+			<span class="resource" data-guid="<%= id %>" >
 				<span class="file-name"><%= name%></span>
+                <% if(hasData) { %>
 				<a class="file-link" href="<%= url %>" target="_blank">View</a>
+                <%}%>
 				<small class="file-type"><%= type %></small>
 			</span>
 
