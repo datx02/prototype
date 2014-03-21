@@ -55,10 +55,14 @@
 		</script>
 
 		<script type="text/html" id="file-template">
-			<span class="resource" data-guid="<%= id %>">
+			<span class="resource" data-guid="<%= id %>" >
 				<span class="file-name"><%= name%></span>
-				<a class="file-link" href="<%= url %>" target="_blank">View</a>
 				<small class="file-type"><%= type %></small>
+                <% if(hasData) { %>
+				<a class="file-link" href="<%= url %>" target="_blank">View</a>
+                <%} else { %>
+				<button class="download-file small">Download</button>
+                <% } %>
 			</span>
 
 			<div class="sharing-panel" hidden>
