@@ -7,6 +7,7 @@
 // Colors
 
 $accent:     #67B2EB;   // blue
+$positive:   #70BA38;   // green
 $font:       "Helvetica Neue", Helvetica, sans-serif;
 $gray:       #888;
 $border:     #ddd;
@@ -200,6 +201,16 @@ input[type="submit"] {
   &.block {
     display: block;
     width: 100%;
+  }
+}
+
+.btn-accent {
+  @extend .btn;
+  color: $positive;
+  border-color: $positive;
+
+  &:hover {
+    background-color: $positive;
   }
 }
 
