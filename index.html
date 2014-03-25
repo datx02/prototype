@@ -23,14 +23,23 @@
 		</footer>
 
 		<script type="text/html" id="home-template">
-			<header class="current-identity">
-
+			<header class="toolbar">
+				<div class="current-identity"></div>
+				<div class="dropdown">
+					<a class="dropdown-trigger">Inbox <span class="shared-count"></span></a>
+					<div class="dropdown-content" id="my-shared-files">
+						<div class="dropdown-header">
+							<h3>Files shared with you</h3>
+						</div>
+						<ul class="file-list"></ul>
+					</div>
+				</div>
 			</header>
 
 			<section id="upload">
 				<h2>Add file</h2>
 				<p>
-					<input type="file" class="file-input" multiple />
+					<input type="file" class="file-input" />
 				</p>
 			</section>
 
@@ -57,12 +66,10 @@
 		<script type="text/html" id="file-template">
 			<span class="resource" data-guid="<%= id %>" >
 				<span class="file-name"><%= name%></span>
-				<small class="file-type"><%= type %></small>
-                <% if(hasData) { %>
+				<% if(hasData) { %>
 				<a class="file-link" href="<%= url %>" target="_blank">View</a>
-                <%} else { %>
-				<button class="download-file small">Download</button>
-                <% } %>
+        <% } %>
+				<small class="file-type"><%= type %></small>
 			</span>
 
 			<div class="sharing-panel" hidden>
@@ -73,12 +80,20 @@
 
 		<script src="node_modules/jquery/dist/jquery.min.js"></script>
 		<script src="vendors/peer.js"></script>
+		<script src="vendors/jquery.noty/js/noty/packaged/jquery.noty.packaged.min.js"></script>
 		<script src="node_modules/underscore/underscore.js"></script>
 		<script src="node_modules/backbone/backbone.js"></script>
 		<script src="build/bundle.js"></script>
 
 		<script>
 			$(function() {
+				$.noty.defaults = $.extend({}, $.noty.defaults, {
+					layout: 'topRight',
+					type: 'information'
+				});
+
+				$.noty.defaults.animation.speed = 300;
+
 				App.start();
 			})
 		</script>
