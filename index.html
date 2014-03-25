@@ -23,8 +23,17 @@
 		</footer>
 
 		<script type="text/html" id="home-template">
-			<header class="current-identity">
-
+			<header class="toolbar">
+				<div class="current-identity"></div>
+				<div class="dropdown">
+					<a class="dropdown-trigger">Inbox <span class="shared-count"></span></a>
+					<div class="dropdown-content" id="my-shared-files">
+						<div class="dropdown-header">
+							<h3>Files shared with you</h3>
+						</div>
+						<ul class="file-list"></ul>
+					</div>
+				</div>
 			</header>
 
 			<section id="upload">

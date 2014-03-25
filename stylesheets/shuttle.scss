@@ -242,6 +242,10 @@ p {
   border: 1px solid $border;
   box-shadow: rgba(#000, .05) 0 2px 2px;
 
+  li {
+    background-color: #fff;
+  }
+
   li:not(:last-child) {
     border-bottom: 1px solid $border;
   }
@@ -339,12 +343,15 @@ p {
   }
 }
 
-.current-identity {
+.toolbar {
   position: fixed;
   top: 1em;
   left: 1em;
   font-size: .9em;
-  color: $gray;
+
+  &, a {
+    color: $gray;
+  }
 }
 
 .connection-view {
@@ -354,6 +361,49 @@ p {
     margin: 0 20%;
   }
 }
+
+/* =DROPDOWNS
+--------------------------------------------- */
+
+.dropdown {
+  position: relative;
+  z-index: 1000;
+}
+
+.dropdown:hover {
+  .dropdown-content {
+    display: block;
+  }
+}
+
+.dropdown-header {
+  padding: .5em;
+
+  h1, h2, h3 {
+    margin: 0;
+  }
+}
+
+.dropdown-content {
+  display: none;
+  background-color: #fff;
+  box-shadow: rgba(#000, .1) 0 7px 10px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+}
+
+.dropdown.open .dropdown-content {
+  display: block;
+}
+
+.dropdown {
+  .file-list {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
 
 /* =FOOTER
 --------------------------------------------- */
