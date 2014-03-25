@@ -396,6 +396,10 @@ p {
   display: block;
 }
 
+.dropdown-trigger {
+  cursor: default;
+}
+
 .dropdown {
   .file-list {
     border: 0;
