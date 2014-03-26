@@ -8,6 +8,7 @@
 
 $accent:     #67B2EB;   // blue
 $positive:   #70BA38;   // green
+$negative:   #C22F2F;   // red
 $font:       "Helvetica Neue", Helvetica, sans-serif;
 $gray:       #888;
 $border:     #ddd;
@@ -211,6 +212,16 @@ input[type="submit"] {
 
   &:hover {
     background-color: $positive;
+  }
+}
+
+.btn-negative {
+  @extend .btn;
+  color: $negative;
+  border-color: $negative;
+
+  &:hover {
+    background-color: $negative;
   }
 }
 
