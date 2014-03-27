@@ -63,6 +63,29 @@
 			</section>
 		</script>
 
+		<script id="key-template" type="text/html">
+			<section class="key-view">
+				<div id="upload-key" style="display: none;">
+				<form>
+					<p>
+						<label for="key"></label>
+						<input id="key-text" class="block" type="text" value="MIICeQIBADANBgkqhkiG9w0BAQEFAASCAmMwgg.." autofocus required />
+					</p>
+						<input type="submit" class="connect block" value="Upload" />
+				</form>
+				</div>
+				<div id="generate-key" style="display: none;">
+				<form>
+					<p>
+						<label for="key"></label>
+						<input id="identity" class="block" type="text" value="" autofocus required />
+					</p>
+					<input type="submit" class="connect block" value="Next" />
+				</form>
+				</div>
+			</section>
+		</script>
+
 		<script type="text/html" id="file-template">
 			<span class="resource" data-guid="<%= id %>" >
 				<span class="file-name"><%= name%></span>
