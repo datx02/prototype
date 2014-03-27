@@ -314,6 +314,7 @@ p {
     border: 0;
     font-weight: 300;
     font-size: .95em;
+    cursor: pointer;
     color: darken($accent, 10%);
 
     &:hover {

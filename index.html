@@ -71,6 +71,8 @@
 				<span class="file-name"><%= name%></span>
 				<% if(hasData) { %>
 				<a class="file-link view-file">View</a>
+				<% } else { %>
+				<button class="btn small download">Download</button>
         <% } %>
 				<small class="file-type"><%= type %></small>
 			</span>
