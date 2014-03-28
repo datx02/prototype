@@ -260,9 +260,8 @@ p {
 
 .file-list {
   @extend .list;
-  border-radius: 4px;
   border: 1px solid $border;
-  box-shadow: rgba(#000, .05) 0 2px 2px;
+  border-width: 1px 0;
 
   li {
     background-color: #fff;
@@ -278,7 +277,7 @@ p {
 
   li.expanded,
   li.expanded:hover  {
-    background-color: rgba(#F2FF00, .1);
+    //background-color: rgba(#F2FF00, .1);
   }
 
   .resource {
@@ -293,14 +292,6 @@ p {
       display: table-cell;
     }
 
-
-    /*& > span {
-      display: inline-block;
-      max-width: 90%;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }*/
 
     &:hover {
 
@@ -340,6 +331,12 @@ p {
 
   .sharing-panel {
     padding: .5em;
+    position: relative;
+
+    .destroy {
+      position: absolute;
+      right: .5em;
+    }
 
     label {
       font-weight: bold;
