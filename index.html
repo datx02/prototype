@@ -24,19 +24,17 @@
 
 		<script type="text/html" id="home-template">
 			<header class="toolbar">
-				<p>
-					<span class="current-identity"></span> · <a href="/#logout">Sign out</a>
-				</p>
+				<span class="current-identity"></span> · <a href="/#logout">Sign out</a> ·
 
-				<div class="dropdown">
-					<a class="dropdown-trigger">Inbox <span class="shared-count"></span></a>
+				<span class="dropdown">
+					<a class="dropdown-trigger">Inbox</a> <span class="bubble shared-count"></span>
 					<div class="dropdown-content" id="my-shared-files">
 						<div class="dropdown-header">
 							<h3>Files shared with you</h3>
 						</div>
 						<ul class="file-list"></ul>
 					</div>
-				</div>
+				</span>
 			</header>
 
 			<section id="upload">
@@ -71,10 +69,10 @@
 				<span class="file-name"><%= name%></span>
 				<% if(hasData) { %>
 				<a class="file-link view-file">View</a>
+				<small class="file-type"><%= type %></small>
 				<% } else { %>
 				<button class="btn small download">Download</button>
         <% } %>
-				<small class="file-type"><%= type %></small>
 			</span>
 
 			<div class="sharing-panel" hidden>

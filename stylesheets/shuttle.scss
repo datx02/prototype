@@ -243,6 +243,17 @@ p {
   padding: 0;
 }
 
+.bubble {
+  display: inline-block;
+  font-size: .9em;
+  color: #fff;
+  border-radius: 100%;
+  width: 1.6em;
+  height: 1.6em;
+  text-align: center;
+  line-height: 1.7em;
+  background-color: $accent;
+}
 
 /* =LISTINGS
 --------------------------------------------- */
@@ -357,9 +368,11 @@ p {
 
 .toolbar {
   position: fixed;
-  top: 1em;
-  left: 1em;
+  top: 0;
+  left: 0;
+  padding: 1em .5em;
   font-size: .9em;
+  background: transparent linear-gradient(#fff 70%, rgba(#fff, 0) 100%);
 
   &, a {
     color: $gray;
@@ -380,6 +393,7 @@ p {
 .dropdown {
   position: relative;
   z-index: 1000;
+  display: inline-block;
 }
 
 .dropdown:hover {
@@ -398,8 +412,11 @@ p {
 
 .dropdown-content {
   display: none;
+  top: 1.5em;
+  min-width: 300px;
+  position: absolute;
   background-color: #fff;
-  box-shadow: rgba(#000, .1) 0 7px 10px;
+  box-shadow: rgba(#000, .1) 0 5px 10px;
   border-radius: 3px;
   border: 1px solid #ddd;
 }
