@@ -64,6 +64,21 @@
 			</section>
 		</script>
 
+		<script id="key-template" type="text/html">
+			<section class="connection-view">
+				<form>
+					<label for="key">Use existing key</label>
+					<textarea id="key" rows="8" placeholder="Private key"></textarea>
+
+					or
+
+					<label><input type="checkbox" id="generate-key" /> Generate new key</label>
+
+					<input type="submit" class="connect block" value="Continue" />
+				</form>
+			</section>
+		</script>
+
 		<script type="text/html" id="file-template">
 			<span class="resource" data-guid="<%= id %>" >
 				<span class="file-name"><%= name%></span>
