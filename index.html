@@ -89,6 +89,16 @@
 			</section>
 		</script>
 
+        <script id="showkey-template" type="text/html">
+          <section class="showkey-view">
+            <form>
+              <label for="key">Here is your public key. Please save it and register in the Namecoin network as <b>p/<%= identity %></b> before continuing. It might take some time for the update to propagate to the network.</label>
+              <textarea id="key" cols="60" rows="5" placeholder="Public key"><%= pubkey %></textarea>
+            </form>
+            <input type="submit" class="connect" value="Continue" />
+          </section>
+        </script>
+
 		<script type="text/html" id="file-template">
 			<span class="resource" data-guid="<%= id %>" >
 				<span class="file-name"><%= name%></span>
