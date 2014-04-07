@@ -233,6 +233,15 @@ p {
   margin: 0 0 1.5em;
 }
 
+pre {
+  border-radius: .3em;
+  background-color: #f3f3f3;
+  padding: 7px;
+  font-family: Menlo, Monaco, monospace;
+  font-size: .9em;
+  color: #444;
+}
+
 
 /* =HELPERS
 --------------------------------------------- */
@@ -411,11 +420,19 @@ p {
   display: none;
   top: 1.5em;
   min-width: 300px;
+  max-width: 400px;
   position: absolute;
   background-color: #fff;
   box-shadow: rgba(#000, .1) 0 5px 10px;
   border-radius: 3px;
   border: 1px solid #ddd;
+
+  p,
+  pre {
+    margin-left: .5em;
+    margin-right: .5em;
+    word-wrap: break-word;
+  }
 }
 
 .dropdown.open .dropdown-content {

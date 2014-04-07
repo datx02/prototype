@@ -27,12 +27,22 @@
 				<span class="current-identity"></span> · <a href="/#logout">Sign out</a> ·
 
 				<span class="dropdown">
-					<a class="dropdown-trigger">Inbox</a> <span class="bubble shared-count"></span>
+					<a class="dropdown-trigger btn small">Inbox <span class="bubble shared-count"></span></a>
 					<div class="dropdown-content" id="my-shared-files">
 						<div class="dropdown-header">
 							<h3>Files shared with you</h3>
 						</div>
 						<ul class="file-list"></ul>
+					</div>
+				</span>
+
+				<span class="dropdown">
+					<span class="dropdown-trigger btn small">Public Key</span>
+					<div class="dropdown-content" id="public-key">
+						<div class="dropdown-header">
+							<h3>Your public key</h3>
+						</div>
+						<pre class="public-key"></pre>
 					</div>
 				</span>
 			</header>
