@@ -27,12 +27,22 @@
 				<span class="current-identity"></span> · <a href="/#logout">Sign out</a> ·
 
 				<span class="dropdown">
-					<a class="dropdown-trigger">Inbox</a> <span class="bubble shared-count"></span>
+					<a class="dropdown-trigger btn small">Inbox <span class="bubble shared-count"></span></a>
 					<div class="dropdown-content" id="my-shared-files">
 						<div class="dropdown-header">
 							<h3>Files shared with you</h3>
 						</div>
 						<ul class="file-list"></ul>
+					</div>
+				</span>
+
+				<span class="dropdown">
+					<span class="dropdown-trigger btn small">Public Key</span>
+					<div class="dropdown-content" id="public-key">
+						<div class="dropdown-header">
+							<h3>Your public key</h3>
+						</div>
+						<pre class="public-key"></pre>
 					</div>
 				</span>
 			</header>
@@ -63,6 +73,31 @@
 				</form>
 			</section>
 		</script>
+
+		<script id="key-template" type="text/html">
+			<section class="connection-view">
+				<form>
+					<label for="key">Use existing key</label>
+					<textarea id="key" rows="8" placeholder="Private key"></textarea>
+
+					or
+
+					<label><input type="checkbox" id="generate-key" /> Generate new key</label>
+
+					<input type="submit" class="connect block" value="Continue" />
+				</form>
+			</section>
+		</script>
+
+        <script id="showkey-template" type="text/html">
+          <section class="showkey-view">
+            <form>
+              <label for="key">Here is your public key. Please save it and register in the Namecoin network as <b>p/<%= identity %></b> before continuing. It might take some time for the update to propagate to the network.</label>
+              <textarea id="key" cols="60" rows="5" placeholder="Public key"><%= pubkey %></textarea>
+            </form>
+            <input type="submit" class="connect" value="Continue" />
+          </section>
+        </script>
 
 		<script type="text/html" id="file-template">
 			<span class="resource" data-guid="<%= id %>" >
