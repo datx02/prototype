@@ -1,12 +1,12 @@
 {
   "name": "rymd-prototype",
   "description": "Simple peer-to-peer filesharing",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "license": "MIT",
   "main": "lib/app.js",
   "dependencies": {
     "rymd": "git://github.com/rymdjs/rymd.git#master",
-    "dht-client": "git://github.com:rymdjs/dht-client.git#master",
+    "dht-client": "git://github.com/rymdjs/dht-client.git#master",
     "peerjs-connection": "git://github.com/rymdjs/peerjs-connection.git#master",
     "indexeddbstore": "git://github.com/rymdjs/data-storage.git#master",
     "underscore": "~1.6.0",
